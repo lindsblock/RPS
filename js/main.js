@@ -1,11 +1,11 @@
-var user;
+var usersChoice;
+var computerChoice
 
 function startGame(e) {
-  var user = e.target.id
-  console.log(user)
-  var cpuChoice = computerChoice()
-  console.log(cpuChoice)
-  checkWin()
+  var usersChoice = e.target.id // the ID of whatever they clicked on 
+  console.log(usersChoice)   
+  computerChoice()
+  checkWin(usersChoice)
   displayResult()
 }
 //computer selects random 
@@ -15,12 +15,37 @@ function computerChoice() {
   console.log(choices[index])
 }
 
-function checkWin() {
-  //check who won
+function checkWin(usersChoice) {
+ if(usersChoice === "rock"){
+  if(computerChoice === "scissors"){
+      console.log( "rock wins");
+  }
+  else {
+      console.log( "paper wins"); 
+  }
+}
+
+if(usersChoice === "paper"){
+  if(computerChoice === "rock"){
+      console.log( "paper wins");
+  }
+  else {
+      console.log( "scissors wins");
+  }
+}
+if(usersChoice === "scissors"){
+  if(computerChoice === "rock"){
+      console.log( "rock wins");
+  }
+  else {
+      console.log("scissors wins");
+  }
+}
+
 }
 
 function displayResult() {
-  //add element to page showing who won
+  console.log()
 }
 
 var choices = document.getElementsByClassName('choice')
