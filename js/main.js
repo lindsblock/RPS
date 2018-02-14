@@ -1,6 +1,26 @@
+var user;
+
 function startGame(e) {
-  var choice = e.target.id
-  console.log(choice)
+  var user = e.target.id
+  console.log(user)
+  var cpuChoice = computerChoice()
+  console.log(cpuChoice)
+  checkWin()
+  displayResult()
+}
+//computer selects random 
+function computerChoice() {
+  var choices = ['rock', 'paper', 'scissors']
+  var index = Math.floor(Math.random() * 3)
+  console.log(choices[index])
+}
+
+function checkWin() {
+  //check who won
+}
+
+function displayResult() {
+  //add element to page showing who won
 }
 
 var choices = document.getElementsByClassName('choice')
